@@ -1,3 +1,6 @@
+html {
+  overflow-y: scroll;
+}
 body {
   font-family: 'Lora', 'Times New Roman', serif;
   font-size: 20px;
@@ -24,7 +27,7 @@ a {
 }
 a:hover,
 a:focus {
-  color: #0085a1;
+  color: #8ad898;
 }
 a img:hover,
 a img:focus {
@@ -40,47 +43,53 @@ hr.small {
   border-width: 4px;
   border-color: white;
 }
-.navbar-custom {
-  position: absolute;
+.navbar {
+  background-color: white;
+  position: sticky;
   top: 0;
   left: 0;
   width: 100%;
-  z-index: 3;
+  z-index: 10;
   font-family: 'Open Sans', 'Helvetica Neue', Helvetica, Arial, sans-serif;
 }
-.navbar-custom .navbar-brand {
+.navbar .navbar-brand {
   font-weight: 800;
 }
-.navbar-custom .nav li a {
+.navbar .nav li a {
   text-transform: uppercase;
   font-size: 12px;
   font-weight: 800;
   letter-spacing: 1px;
 }
 @media only screen and (min-width: 768px) {
-  .navbar-custom {
-    background: transparent;
-    border-bottom: 1px solid transparent;
+  .navbar {
+    border: none;
   }
-  .navbar-custom .navbar-brand {
-    color: white;
+  .navbar .navbar-nav {
+    display: inline-block;
+    float: none;
+    vertical-align: top;
+  }
+  .navbar .navbar-collapse {
+    text-align: center;
+  }
+  .navbar .navbar-brand {
     padding: 20px;
   }
-  .navbar-custom .navbar-brand:hover,
-  .navbar-custom .navbar-brand:focus {
-    color: rgba(255, 255, 255, 0.8);
+  .navbar .navbar-brand:hover,
+  .navbar .navbar-brand:focus {
+    color: #8ad898;
   }
-  .navbar-custom .nav li a {
-    color: white;
+  .navbar .nav li a {
     padding: 20px;
   }
-  .navbar-custom .nav li a:hover,
-  .navbar-custom .nav li a:focus {
-    color: rgba(255, 255, 255, 0.8);
+  .navbar .nav li a:hover,
+  .navbar .nav li a:focus {
+    color: #8ad898;
   }
 }
 @media only screen and (min-width: 1170px) {
-  .navbar-custom {
+  .navbar {
     -webkit-transition: background-color 0.3s;
     -moz-transition: background-color 0.3s;
     transition: background-color 0.3s;
@@ -93,7 +102,7 @@ hr.small {
     -webkit-backface-visibility: hidden;
     backface-visibility: hidden;
   }
-  .navbar-custom.is-fixed {
+  .navbar.is-fixed {
     /* when the user scrolls down, we hide the header right above the viewport */
     position: fixed;
     top: -61px;
@@ -103,21 +112,21 @@ hr.small {
     -moz-transition: -moz-transform 0.3s;
     transition: transform 0.3s;
   }
-  .navbar-custom.is-fixed .navbar-brand {
+  .navbar.is-fixed .navbar-brand {
     color: #404040;
   }
-  .navbar-custom.is-fixed .navbar-brand:hover,
-  .navbar-custom.is-fixed .navbar-brand:focus {
-    color: #0085a1;
+  .navbar.is-fixed .navbar-brand:hover,
+  .navbar.is-fixed .navbar-brand:focus {
+    color: #8ad898;
   }
-  .navbar-custom.is-fixed .nav li a {
+  .navbar.is-fixed .nav li a {
     color: #404040;
   }
-  .navbar-custom.is-fixed .nav li a:hover,
-  .navbar-custom.is-fixed .nav li a:focus {
-    color: #0085a1;
+  .navbar.is-fixed .nav li a:hover,
+  .navbar.is-fixed .nav li a:focus {
+    color: #8ad898;
   }
-  .navbar-custom.is-visible {
+  .navbar.is-visible {
     /* if the user changes the scrolling direction, we show the header */
     -webkit-transform: translate3d(0, 100%, 0);
     -moz-transform: translate3d(0, 100%, 0);
@@ -134,7 +143,6 @@ hr.small {
   -moz-background-size: cover;
   background-size: cover;
   -o-background-size: cover;
-  margin-bottom: 50px;
 }
 .intro-header .site-heading,
 .intro-header .post-heading,
@@ -151,6 +159,7 @@ hr.small {
 }
 .intro-header .site-heading,
 .intro-header .page-heading {
+  font-family: 'Ubuntu', sans-serif;
   text-align: center;
 }
 .intro-header .site-heading h1,
@@ -161,13 +170,17 @@ hr.small {
 }
 .intro-header .site-heading .subheading,
 .intro-header .page-heading .subheading {
-  color: #91ca9b;
-  font-size: 24px;
+  color: #8ad898;
+  font-size: 28px;
   line-height: 1.1,
 			display: block;
-  font-family: 'Open Sans', 'Helvetica Neue', Helvetica, Arial, sans-serif;
   margin: 10px 0 0;
   font-weight: 600;
+  text-shadow: -1px -1px 0 #ffffff, 1px -1px 0 #ffffff, -1px 1px 0 #ffffff, 1px 1px 0 #ffffff;
+}
+.intro-header .site-heading img,
+.intro-header .page-heading img {
+  max-width: 75%;
 }
 @media only screen and (min-width: 768px) {
   .intro-header .site-heading h1,
@@ -212,7 +225,7 @@ hr.small {
 .post-preview > a:hover,
 .post-preview > a:focus {
   text-decoration: none;
-  color: #0085a1;
+  color: #8ad898;
 }
 .post-preview > a > .post-title {
   font-size: 30px;
@@ -236,7 +249,7 @@ hr.small {
 }
 .post-preview > .post-meta > a:hover,
 .post-preview > .post-meta > a:focus {
-  color: #0085a1;
+  color: #8ad898;
   text-decoration: underline;
 }
 @media only screen and (min-width: 768px) {
@@ -316,7 +329,7 @@ footer .copyright {
   opacity: 1;
 }
 .floating-label-form-group-with-focus label {
-  color: #0085a1;
+  color: #8ad898;
 }
 form .row:first-child .floating-label-form-group {
   border-top: 1px solid #eeeeee;
@@ -336,8 +349,8 @@ form .row:first-child .floating-label-form-group {
 }
 .btn-default:hover,
 .btn-default:focus {
-  background-color: #0085a1;
-  border: 1px solid #0085a1;
+  background-color: #8ad898;
+  border: 1px solid #8ad898;
   color: white;
 }
 .pager {
@@ -357,8 +370,8 @@ form .row:first-child .floating-label-form-group {
 .pager li > a:hover,
 .pager li > a:focus {
   color: white;
-  background-color: #0085a1;
-  border: 1px solid #0085a1;
+  background-color: #8ad898;
+  border: 1px solid #8ad898;
 }
 .pager .disabled > a,
 .pager .disabled > a:hover,
@@ -371,12 +384,12 @@ form .row:first-child .floating-label-form-group {
 ::-moz-selection {
   color: white;
   text-shadow: none;
-  background: #0085a1;
+  background: #8ad898;
 }
 ::selection {
   color: white;
   text-shadow: none;
-  background: #0085a1;
+  background: #8ad898;
 }
 img::selection {
   color: white;
@@ -387,5 +400,5 @@ img::-moz-selection {
   background: transparent;
 }
 body {
-  webkit-tap-highlight-color: #0085a1;
+  webkit-tap-highlight-color: #8ad898;
 }

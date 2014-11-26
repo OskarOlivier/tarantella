@@ -3,6 +3,10 @@
 
 // Global Components
 
+html {
+  overflow-y: scroll;
+}
+
 body {
 	.serif;
 	font-size: 20px;
@@ -58,12 +62,13 @@ hr.small {
 
 // Navigation
 
-.navbar-custom {
-	position: absolute;
+.navbar {
+  background-color: white;
+	position: sticky;
 	top: 0;
 	left: 0;
 	width: 100%;
-	z-index: 3;
+	z-index: 10;
 	.sans-serif;
 	.navbar-brand {
 		font-weight: 800;
@@ -79,24 +84,30 @@ hr.small {
 		}
 	}
 	@media only screen and (min-width: 768px) {
-		background: transparent;
-		border-bottom: 1px solid transparent;
+    .navbar-nav {
+        display: inline-block;
+        float: none;
+        vertical-align: top;
+    }
+
+    .navbar-collapse {
+        text-align: center;
+    }
+		border: none;
 		.navbar-brand {
-			color: white;
 			padding: 20px;
 			&:hover,
 			&:focus {
-				color: @white-faded;
+				color: @brand-primary;
 			}
 		}
 		.nav {
 			li {
 				a {
-					color: white;
 					padding: 20px;
 					&:hover,
 					&:focus {
-						color: @white-faded;
+						color: @brand-primary;
 					}
 				}
 			}
@@ -160,8 +171,6 @@ hr.small {
 	background: no-repeat center center; 
 	background-attachment: scroll;
 	.background-cover;
-	// NOTE: Background images are set within the HTML using inline CSS!
-	margin-bottom: 50px;
 	.site-heading,
 	.post-heading,
 	.page-heading {
@@ -173,6 +182,7 @@ hr.small {
 	}
 	.site-heading,
 	.page-heading {
+	  font-family: 'Ubuntu', sans-serif;
 		text-align: center;
 		h1 {
 			margin-top: 0;
@@ -180,14 +190,20 @@ hr.small {
 			font-size: 50px;
 		}
 		.subheading {
-		  color: #91ca9b;
-			font-size: 24px;
+		  color: @brand-primary;
+			font-size: 28px;
 			line-height: 1.1,
 			display: block;
-			.sans-serif;
 			margin: 10px 0 0;
 			font-weight: 600;
+      text-shadow: -1px -1px 0 #FFF,  
+                    1px -1px 0 #FFF,
+                   -1px  1px 0 #FFF,
+                    1px  1px 0 #FFF;
 		}
+	  img {
+	    max-width:75%;
+	  }
 		@media only screen and (min-width: 768px) {
 			h1 {
 				font-size: 80px;
